@@ -22,7 +22,7 @@ export default function Home() {
             <span className="bg-gradient-to-r from-primary via-primary to-primary bg-clip-text text-transparent">
               template
             </span>{' '}
-            que j`&apos;utilise pour tout mes projets
+            que j&apos;utilise pour tout mes projets
           </h1>
           <p className="mt-2">
             Un boilerplate gratuit et open-source fait avec Next.js, TypeScript,

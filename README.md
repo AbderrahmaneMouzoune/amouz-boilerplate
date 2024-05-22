@@ -1,36 +1,77 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Amouz Boilerplate
 
-## Getting Started
+Ce projet est une base de démarrage vraiment light pour tous mes projets et futur projets. Il est configuré avec Next.js, Tailwind CSS, Shadcn/ui, TypeScript, ESLint, Prettier, Next-theme.
 
-First, run the development server:
+Vous pouvez clone cette base de projet et faire le votre. Une version live disponible à : [https://amouz-boilerplate.vercel.app](https://amouz-boilerplate.vercel.app)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+# Sommaire
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+1. [Amouz Boilerplate](#amouz-boilerplate)
+2. [Contenu](#contenu)
+   - [Scripts](#scripts)
+   - [Dépendances](#dépendances)
+   - [Dépendances de développement](#dépendances-de-développement)
+3. [Utilisation](#utilisation)
+   1. [Forker le dépôt](#forker-le-dépôt)
+   2. [Cloner le dépôt forké](#cloner-le-dépôt-forké)
+   3. [Installer les dépendances](#installer-les-dépendances)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Contenu
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Scripts
 
-## Learn More
+- **`dev`**: Démarre le serveur de développement Next.js.
+- **`build`**: Génère une version optimisée de l'application pour la production.
+- **`prettier`**: Formate le code à l'aide de Prettier.
+- **`start`**: Démarre l'application Next.js en mode production.
+- **`lint`**: Analyse le code à l'aide de ESLint.
 
-To learn more about Next.js, take a look at the following resources:
+### Dépendances
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **[@radix-ui/react-dropdown-menu](https://www.radix-ui.com/docs/primitives/components/dropdown-menu)**: Composant de menu déroulant de Radix UI.
+- **[@radix-ui/react-icons](https://www.radix-ui.com/docs/icons)**: Icônes de Radix UI.
+- **[@radix-ui/react-slot](https://www.radix-ui.com/docs/primitives/components/slot)**: Composant Slot de Radix UI.
+- **[class-variance-authority](https://www.npmjs.com/package/class-variance-authority)**: Utilitaire pour la gestion des variantes de classes.
+- **[clsx](https://www.npmjs.com/package/clsx)**: Utilitaire de construction conditionnelle de classes.
+- **[lucide-react](https://lucide.dev/docs/react)**: Icônes pour React.
+- **[next](https://nextjs.org/)**: Framework React pour les applications côté serveur.
+- **[next-themes](https://github.com/pacocoursey/next-themes)**: Gestion des thèmes pour Next.js.
+- **[react](https://react.dev/)**: Bibliothèque pour construire des interfaces utilisateur.
+- **[react-dom](https://react.dev/)**: Entrée de la bibliothèque React pour le DOM.
+- **[tailwind-merge](https://www.npmjs.com/package/tailwind-merge)**: Fusion de classes Tailwind CSS.
+- **[tailwindcss-animate](https://www.npmjs.com/package/tailwindcss-animate)**: Plugin pour les animations Tailwind CSS.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### Dépendances de développement
 
-## Deploy on Vercel
+- **[@types/node](https://www.npmjs.com/package/@types/node)**: Définitions de types pour Node.js.
+- **[@types/react](https://www.npmjs.com/package/@types/react)**: Définitions de types pour React.
+- **[@types/react-dom](https://www.npmjs.com/package/@types/react-dom)**: Définitions de types pour React DOM.
+- **[eslint](https://eslint.org/)**: Outil d'analyse de code pour JavaScript et TypeScript.
+- **[eslint-config-next](https://nextjs.org/docs/basic-features/eslint)**: Configuration ESLint pour Next.js.
+- **[postcss](https://postcss.org/)**: Outil de transformation de CSS.
+- **[tailwindcss](https://tailwindcss.com/)**: Framework CSS utilitaire.
+- **[typescript](https://www.typescriptlang.org/)**: Sur-ensemble typé de JavaScript.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Utilisation
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Pour commencer à utiliser ce projet, suivez les étapes ci-dessous :
+
+1. **Forker le dépôt**
+
+   Cliquez sur le bouton "Fork" en haut à droite de la page du dépôt GitHub pour créer une copie de ce dépôt sur votre compte GitHub.
+
+2. **Cloner le dépôt forké**
+
+   Clonez le dépôt forké sur votre machine locale :
+
+   ```bash
+   git clone https://github.com/<votre-nom-d-utilisateur>/<nom-du-repo>.git
+   cd <nom-du-repo>
+   ```
+
+3. **Installer les dépendances**
+
+    Installez les dépendances nécessaires :
+    ```bash
+    npm install
+    ```

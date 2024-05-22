@@ -1,11 +1,10 @@
+import Footer from '@/app/shared/footer'
+import Header from '@/app/shared/header'
+import { ThemeProvider } from '@/components/theme-provider'
+import { cn } from '@/lib/utils'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
-import { ThemeProvider } from '@/components/theme-provider'
-import { ThemeToggle } from '@/components/theme-toggle'
-import { cn } from '@/lib/utils'
-import Header from '@/app/shared/header'
-import Footer from '@/app/shared/footer'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -24,7 +23,7 @@ export default function RootLayout({
       <body
         className={cn(
           inter.className,
-          'bg-background text-foreground min-h-screen flex flex-col justify-between'
+          'bg-background text-foreground min-h-screen flex flex-col justify-between',
         )}
       >
         <ThemeProvider

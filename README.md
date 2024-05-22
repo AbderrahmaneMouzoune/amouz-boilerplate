@@ -71,7 +71,8 @@ Pour commencer à utiliser ce projet, suivez les étapes ci-dessous :
 
 3. **Installer les dépendances**
 
-    Installez les dépendances nécessaires :
-    ```bash
-    npm install
-    ```
+   Installez les dépendances nécessaires :
+
+   ```bash
+   npm install
+   ```

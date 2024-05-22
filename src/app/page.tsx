@@ -1,10 +1,6 @@
 import { badgeVariants } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
-import {
-  GitHubLogoIcon,
-  StarIcon,
-  TwitterLogoIcon,
-} from '@radix-ui/react-icons'
+import { GitHubLogoIcon, TwitterLogoIcon } from '@radix-ui/react-icons'
 import Link from 'next/link'
 
 export default function Home() {
@@ -26,7 +22,7 @@ export default function Home() {
             <span className="bg-gradient-to-r from-primary via-primary to-primary bg-clip-text text-transparent">
               template
             </span>{' '}
-            que j'utilise pour tout mes projets
+            que j`&apos;utilise pour tout mes projets
           </h1>
           <p className="mt-2">
             Un boilerplate gratuit et open-source fait avec Next.js, TypeScript,

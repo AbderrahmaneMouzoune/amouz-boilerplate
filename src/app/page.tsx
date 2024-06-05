@@ -9,11 +9,11 @@ export default function Home() {
       <article className="mx-auto max-w-screen-lg">
         <div className="text-center">
           <Link
-            href="https://twitter.com/mouz_abd"
+            href="https://twitter.com/abderrahmane_js"
             target="_blank"
             className={badgeVariants()}
           >
-            <TwitterLogoIcon className="mr-1 size-4" /> Suivez @mouz_abd
+            <TwitterLogoIcon className="mr-1 size-4" /> Suivez @abderrahmane_js
           </Link>
         </div>
         <div className="mt-3 text-center">

@@ -45,7 +45,7 @@ export default function Footer() {
           <hr className="size-5 w-[1px] bg-accent-foreground opacity-10" />
 
           <Link
-            href={'https://twitter.com/mouz_abd'}
+            href={'https://twitter.com/abderrahmane_js'}
             className="hover:text-primary transition-colors"
             target="_blank"
           >

@@ -23,6 +23,7 @@
       "@public/*": ["public/*"],
       "@utils/*": ["src/utils/*"],
       "@hooks/*": ["src/lib/hooks/*"],
+      "@styles/*": ["src/styles/*"],
       "@components/*": ["src/components/*"],
       "@lib/*": ["src/lib/*"],
       "@use-cases/*": ["src/use-cases/*"]

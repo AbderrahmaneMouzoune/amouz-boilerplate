@@ -1,16 +1,26 @@
-import Footer from '@/app/shared/footer'
-import Header from '@/app/shared/header'
-import { ThemeProvider } from '@/components/theme-provider'
-import { cn } from '@/lib/utils'
-import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
-import './globals.css'
+import Footer from '@/app/_layouts/footer'
+import Header from '@/app/_layouts/header'
 
-const inter = Inter({ subsets: ['latin'] })
+import type { Metadata, Viewport } from 'next'
+import { Providers } from '@lib/providers/providers'
+import { inter } from '@/app/fonts'
+import { cn } from '@lib/utils'
+import '@styles/globals.css'
+import { FALLBACK_SEO } from '@/app.config'
 
 export const metadata: Metadata = {
-  title: 'Simple boilerplate by Abderrahmane Mouzoune',
-  description: 'Simple boilerplate by Abderrahmane Mouzoune',
+  ...FALLBACK_SEO,
+}
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
+  viewportFit: 'cover',
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#ffffff' },
+    { media: '(prefers-color-scheme: dark)', color: '#ffffff' },
+  ],
 }
 
 export default function RootLayout({
@@ -26,16 +36,11 @@ export default function RootLayout({
           'bg-background text-foreground min-h-screen flex flex-col justify-between',
         )}
       >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
+        <Providers>
           <Header />
           {children}
           <Footer />
-        </ThemeProvider>
+        </Providers>
       </body>
     </html>
   )

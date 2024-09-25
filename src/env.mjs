@@ -7,6 +7,7 @@ export const env = createEnv({
    */
   server: {
     NODE_ENV: z.enum(['development', 'test', 'production']),
+    LOG_WEBHOOK_DISCORD: z.string().optional(),
   },
   /*
    * Environment variables available on the client (and server).

@@ -1,4 +1,4 @@
-import { Headline } from '@/components/ui/headline'
+import { Headline } from '@components/ui/headline'
 
 export default function NotFound() {
   return (

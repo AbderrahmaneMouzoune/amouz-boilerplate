@@ -1,8 +1,9 @@
-import { env } from '@/env.mjs'
+import { sendLogs } from '@lib/logs'
 
 export class PublicError extends Error {
   constructor(message: string) {
     super(message)
+    sendLogs(this).catch(console.error)
   }
 }
 

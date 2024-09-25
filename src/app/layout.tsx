@@ -33,7 +33,7 @@ export default function RootLayout({
       <body
         className={cn(
           inter.className,
-          'bg-background text-foreground min-h-screen flex flex-col justify-between',
+          'bg-background text-foreground min-h-screen flex flex-col'
         )}
       >
         <Providers>

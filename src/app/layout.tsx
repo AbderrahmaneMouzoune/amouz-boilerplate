@@ -3,7 +3,7 @@ import Header from '@/app/_layouts/header'
 
 import type { Metadata, Viewport } from 'next'
 import { Providers } from '@lib/providers/providers'
-import { inter } from '@/app/fonts'
+import { inter, lexend } from '@/app/fonts'
 import { cn } from '@lib/utils'
 import '@styles/globals.css'
 import { FALLBACK_SEO } from '@/app.config'
@@ -33,7 +33,8 @@ export default function RootLayout({
       <body
         className={cn(
           inter.className,
-          'bg-background text-foreground min-h-screen flex flex-col'
+          lexend.variable,
+          'scrollbar-thin scrollbar-track-background scrollbar-thumb-accent min-h-screen flex flex-col'
         )}
       >
         <Providers>

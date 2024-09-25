@@ -21,8 +21,8 @@ export default function Home() {
 
         <div className="mt-3 text-center">
           <Headline variant={'h1'}>
-            Le <span className="text-primary">template</span> que j&apos;utilise
-            pour tout mes projets
+            Le <span className="text-secondary">template</span> que
+            j&apos;utilise pour tout mes projets
           </Headline>
 
           <p className="mt-2">
@@ -38,7 +38,7 @@ export default function Home() {
               className="group"
             >
               <GitHubLogoIcon className="size-5 mr-2" /> Mettre une{' '}
-              <span className="group-hover:-translate-y-1 mx-1 transition-transform">
+              <span className="group-hover:-translate-y-0.5 mx-1 transition-transform">
                 ⭐
               </span>{' '}
               sur Github

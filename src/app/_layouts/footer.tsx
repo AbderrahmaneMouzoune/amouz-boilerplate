@@ -8,7 +8,7 @@ import Link from 'next/link'
 
 export default function Footer() {
   return (
-    <footer className="mt-auto py-5 bg-gray-100 dark:bg-gray-900 text-sm">
+    <footer className="mt-auto py-5 bg-background text-sm">
       <section className="container flex flex-col items-center justify-between gap-5 md:flex-row">
         <div>
           <span>© {new Date().getFullYear()} Built by </span>

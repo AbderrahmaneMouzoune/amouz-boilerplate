@@ -1,5 +1,5 @@
-import Footer from '@app/_layouts/footer'
-import Header from '@app/_layouts/header'
+import Footer from '@components/shared/footer'
+import Header from '@components/shared/header'
 
 import type { Metadata, Viewport } from 'next'
 import { Providers } from '@lib/providers/providers'

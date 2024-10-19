@@ -19,13 +19,13 @@ export function ThemeToggle() {
       <Tooltip delayDuration={100}>
         <TooltipTrigger asChild>
           <Button
-            className="size-8 bg-background mr-2"
+            className="bg-background mr-2 size-8"
             variant="outline"
             size="icon"
             onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
           >
-            <SunIcon className="size-4 rotate-90 scale-0 transition-transform ease-in-out duration-500 dark:rotate-0 dark:scale-100" />
-            <MoonIcon className="absolute size-4 rotate-0 scale-1000 transition-transform ease-in-out duration-500 dark:-rotate-90 dark:scale-0" />
+            <SunIcon className="dark:rotate-0 dark:scale-100 duration-500 ease-in-out rotate-90 scale-0 size-4 transition-transform" />
+            <MoonIcon className="absolute dark:-rotate-90 dark:scale-0 duration-500 ease-in-out rotate-0 scale-1000 size-4 transition-transform" />
             <span className="sr-only">Switch Theme</span>
           </Button>
         </TooltipTrigger>

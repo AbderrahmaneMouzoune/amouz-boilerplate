@@ -13,7 +13,8 @@
   },
   "lint-staged": {
     "*": [
-      "bun run format"
+      "bun run format",
+      "git add"
     ]
   },
   "dependencies": {

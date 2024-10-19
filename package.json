@@ -11,6 +11,11 @@
     "lint": "next lint",
     "prepare": "husky"
   },
+  "lint-staged": {
+    "*": [
+      "bun run format"
+    ]
+  },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",
     "@radix-ui/react-avatar": "^1.1.0",

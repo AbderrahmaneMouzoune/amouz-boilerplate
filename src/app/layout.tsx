@@ -34,7 +34,7 @@ export default function RootLayout({
         className={cn(
           inter.className,
           lexend.variable,
-          'scrollbar-thin scrollbar-track-background scrollbar-thumb-accent min-h-screen flex flex-col'
+          'scrollbar-thin scrollbar-track-background scrollbar-thumb-accent min-h-screen flex flex-col',
         )}
       >
         <Providers>

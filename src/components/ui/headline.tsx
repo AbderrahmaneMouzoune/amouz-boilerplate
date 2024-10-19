@@ -22,7 +22,7 @@ const headlineVariants = cva(
     defaultVariants: {
       variant: 'h2',
     },
-  }
+  },
 )
 
 export interface HeadlineProps
@@ -42,7 +42,7 @@ const Headline = React.forwardRef<HTMLHeadingElement, HeadlineProps>(
         {...props}
       />
     )
-  }
+  },
 )
 Headline.displayName = 'Headline'
 

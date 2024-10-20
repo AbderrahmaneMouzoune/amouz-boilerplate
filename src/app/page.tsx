@@ -7,7 +7,7 @@ import Link from 'next/link'
 
 export default function Home() {
   return (
-    <main className="flex flex-col items-center justify-center py-5 px-3 my-auto">
+    <main className="my-auto flex flex-col items-center justify-center px-3 py-5">
       <article className="mx-auto max-w-screen-lg">
         <div className="text-center">
           <Link
@@ -31,14 +31,14 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="mt-5 flex gap-2 justify-center max-sm:flex-col">
+        <div className="mt-5 flex justify-center gap-2 max-sm:flex-col">
           <Button size={'lg'} variant={'outline'} asChild>
             <Link
               href={'https://github.com/AbderrahmaneMouzoune/amouz-boilerplate'}
               className="group"
             >
-              <GitHubLogoIcon className="size-5 mr-2" /> Mettre une{' '}
-              <span className="group-hover:-translate-y-0.5 mx-1 transition-transform">
+              <GitHubLogoIcon className="mr-2 size-5" /> Mettre une{' '}
+              <span className="mx-1 transition-transform group-hover:-translate-y-0.5">
                 ⭐
               </span>{' '}
               sur Github

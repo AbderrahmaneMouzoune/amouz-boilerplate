@@ -15,7 +15,10 @@ export const FALLBACK_SEO: Metadata = {
   metadataBase: new URL(APP_CONFIG.website),
   authors: APP_CONFIG.authors,
   creator: APP_CONFIG.creator,
-  title: APP_CONFIG.name,
+  title:
+    env.NODE_ENV !== 'production'
+      ? `[${env.NODE_ENV.substring(0, 3)}] - ${APP_CONFIG.name}`
+      : APP_CONFIG.name,
   openGraph: {
     title:
       'amouz-boilerplate the fastest & safest way to start an Strapi + Nextjs project',

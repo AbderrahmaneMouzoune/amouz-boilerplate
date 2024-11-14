@@ -1,58 +1,42 @@
+import { SOCIALS } from '@/app.config'
 import { Button } from '@components/ui/button'
-import {
-  GitHubLogoIcon,
-  LinkedInLogoIcon,
-  TwitterLogoIcon,
-} from '@radix-ui/react-icons'
-import Link from 'next/link'
+import { ExternalLink } from '@components/ui/external-link'
+import { Reveal } from '@components/ui/reveal'
 
 export default function Footer() {
   return (
     <footer className="mt-auto bg-background py-5 text-sm">
       <section className="container flex flex-col items-center justify-between gap-5 md:flex-row">
-        <div>
+        <Reveal animations={['fade-in', 'slide-in-right']} asChild={false}>
           <span>© {new Date().getFullYear()} Built by </span>
           <Button variant={'link'} className="px-0" asChild>
-            <Link href={'https://abderrahmanemouzoune.com'} target="_blank">
+            <ExternalLink
+              href={'https://abderrahmanemouzoune.com'}
+              target="_blank"
+            >
               Abderrahmane Mouzoune.
-            </Link>
+            </ExternalLink>
           </Button>
           <span className="ml-1">Powered by </span>
           <Button variant={'link'} className="px-0" asChild>
-            <Link href={'https://www.youzoune.com'} target="_blank">
+            <ExternalLink href={'https://www.youzoune.com'} target="_blank">
               youzoune.com
-            </Link>
+            </ExternalLink>
           </Button>
-        </div>
+        </Reveal>
 
         <div className="flex items-center gap-5 md:gap-2">
-          <Button variant={'ghost'} asChild size={'icon'}>
-            <Link
-              href={'https://github.com/AbderrahmaneMouzoune'}
-              target="_blank"
-            >
-              <GitHubLogoIcon className="size-4" />
-            </Link>
-          </Button>
-
-          <hr className="size-4 w-[1px] bg-accent-foreground opacity-10" />
-
-          <Button variant={'ghost'} size={'icon'} asChild>
-            <Link
-              href={'https://www.linkedin.com/in/abderrahmane-mouzoune/'}
-              target="_blank"
-            >
-              <LinkedInLogoIcon className="size-4" />
-            </Link>
-          </Button>
-
-          <hr className="size-4 w-[1px] bg-accent-foreground opacity-10" />
-
-          <Button variant={'ghost'} size={'icon'} asChild>
-            <Link href={'https://twitter.com/abderrahmane_js'} target="_blank">
-              <TwitterLogoIcon className="size-4" />
-            </Link>
-          </Button>
+          {SOCIALS.map((social) => {
+            const { Icon, link, text } = social
+            return (
+              <Button key={link} variant={'ghost'} asChild size={'icon'}>
+                <ExternalLink href={link} target="_blank">
+                  <Icon className="size-4" />
+                  <span className="sr-only">{text}</span>
+                </ExternalLink>
+              </Button>
+            )
+          })}
         </div>
       </section>
     </footer>

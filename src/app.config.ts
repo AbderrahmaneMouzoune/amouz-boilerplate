@@ -1,5 +1,10 @@
 import { env } from '@/env.mjs'
 import type { Metadata } from 'next'
+import {
+  GitHubLogoIcon,
+  LinkedInLogoIcon,
+  TwitterLogoIcon,
+} from '@radix-ui/react-icons'
 
 export const APP_CONFIG = {
   name: 'amouz-boilerplate',
@@ -36,3 +41,21 @@ export const FALLBACK_SEO: Metadata = {
     type: 'website',
   },
 }
+
+export const SOCIALS = [
+  {
+    Icon: GitHubLogoIcon,
+    link: 'https://github.com/AbderrahmaneMouzoune',
+    text: 'Github',
+  },
+  {
+    Icon: LinkedInLogoIcon,
+    link: 'https://www.linkedin.com/in/abderrahmane-mouzoune/',
+    text: 'LinkedIn',
+  },
+  {
+    Icon: TwitterLogoIcon,
+    link: 'https://twitter.com/abderrahmane_js',
+    text: 'X',
+  },
+]

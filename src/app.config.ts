@@ -24,9 +24,13 @@ export const FALLBACK_SEO: Metadata = {
     env.NODE_ENV !== 'production'
       ? `[${env.NODE_ENV.substring(0, 3)}] - ${APP_CONFIG.name}`
       : APP_CONFIG.name,
+  description:
+    'amouz-boilerplate the fastest & safest way to start an Strapi + Nextjs project',
+  alternates: {
+    canonical: new URL(APP_CONFIG.website),
+  },
   openGraph: {
-    title:
-      'amouz-boilerplate the fastest & safest way to start an Strapi + Nextjs project',
+    title: 'Amouz-boilerplate my fastest way to start a project',
     url: new URL(APP_CONFIG.website),
     siteName: APP_CONFIG.name,
     images: [
@@ -39,6 +43,23 @@ export const FALLBACK_SEO: Metadata = {
     ],
     locale: 'fr_FR',
     type: 'website',
+    description:
+      'amouz-boilerplate the fastest & safest way to start an Strapi + Nextjs project',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    site: APP_CONFIG.website,
+    title: 'Amouz-boilerplate my fastest way to start a project',
+    description:
+      'amouz-boilerplate the fastest & safest way to start an Strapi + Nextjs project',
+    images: [
+      {
+        url: APP_CONFIG.website + '/logo.webp',
+        width: 1300,
+        height: 272,
+        alt: `Logo of ${APP_CONFIG.name}`,
+      },
+    ],
   },
 }
 

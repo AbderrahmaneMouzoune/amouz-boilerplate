@@ -28,11 +28,12 @@ const headlineVariants = cva(
 export interface HeadlineProps
   extends React.HTMLAttributes<HTMLHeadingElement>,
     VariantProps<typeof headlineVariants> {
+  as?: React.ElementType
   asChild?: boolean
 }
 
 const Headline = React.forwardRef<HTMLHeadingElement, HeadlineProps>(
-  ({ className, variant, asChild = false, ...props }, ref) => {
+  ({ className, variant, as = 'h2', asChild = false, ...props }, ref) => {
     const Comp = (asChild ? Slot : variant) ?? 'h2'
 
     return (

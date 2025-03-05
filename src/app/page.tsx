@@ -9,7 +9,7 @@ import Link from 'next/link'
 export default function Home() {
   return (
     <main className="my-auto flex flex-col items-center justify-center px-3 py-5">
-      <article className="mx-auto max-w-screen-lg">
+      <article className="mx-auto max-w-(--breakpoint-lg)">
         <div className="text-center">
           <Reveal animations={['zoom-in', 'fade-in']} asChild={false}>
             <Link

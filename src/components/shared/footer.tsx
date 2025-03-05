@@ -5,7 +5,7 @@ import { Reveal } from '@components/ui/reveal'
 
 export default function Footer() {
   return (
-    <footer className="mt-auto bg-background py-5 text-sm">
+    <footer className="bg-background mt-auto py-5 text-sm">
       <section className="container flex flex-col items-center justify-between gap-5 md:flex-row">
         <Reveal animations={['fade-in', 'slide-in-right']} asChild={false}>
           <span>© {new Date().getFullYear()} Built by </span>

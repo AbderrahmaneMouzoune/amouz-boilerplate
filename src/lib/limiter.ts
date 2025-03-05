@@ -31,7 +31,7 @@ export async function rateLimitByIp({
   limit?: number
   window?: number
 }) {
-  const ip = getIp()
+  const ip = await getIp()
 
   if (!ip) {
     throw new RateLimitError()

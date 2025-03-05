@@ -28,7 +28,8 @@
       "@components/*": ["src/components/*"],
       "@lib/*": ["src/lib/*"],
       "@use-cases/*": ["src/use-cases/*"]
-    }
+    },
+    "target": "ES2017"
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
   "exclude": ["node_modules"]

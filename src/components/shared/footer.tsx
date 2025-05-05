@@ -1,4 +1,4 @@
-import { SOCIALS } from '@/app.config'
+import { SOCIALS } from '@/config/app.config'
 import { Button } from '@components/ui/button'
 import { ExternalLink } from '@components/ui/external-link'
 import { Reveal } from '@components/ui/reveal'

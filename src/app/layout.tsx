@@ -6,7 +6,7 @@ import { Providers } from '@lib/providers/providers'
 import { inter, lexend } from '@app/fonts'
 import { cn } from '@lib/utils'
 import '@styles/globals.css'
-import { FALLBACK_SEO } from '@/app.config'
+import { FALLBACK_SEO } from '@/config/app.config'
 
 export const metadata: Metadata = {
   ...FALLBACK_SEO,

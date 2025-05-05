@@ -102,7 +102,7 @@ Exemple de structure:
 import { authenticatedAction } from "@lib/safe-action";
 import { revalidatePath } from "next/cache";
 import { z } from "zod";
-import { ROUTES } from "@config/routes";
+import { ROUTER } from "@config/router.config";
 import { [NomEntité]Repository } from "@data-access/repositories/[nom-entité].repository";
 import { Create[NomEntité]Input, Update[NomEntité]Input } from "@data-access/schemas/[nom-entité].schema";
 import { User } from "@data-access/schemas/user.schema";
@@ -227,7 +227,7 @@ export const create[NomEntité]Action = authenticatedAction
     const result = await create[NomEntité]UseCase(ctx.user, {
       // mapper input vers les paramètres requis
     });
-    revalidatePath(ROUTES.[ROUTE_ASSOCIÉE]);
+    revalidatePath(ROUTER.[ROUTE_ASSOCIÉE]);
     return result;
   });
 
@@ -242,7 +242,7 @@ export const update[NomEntité]Action = authenticatedAction
     const result = await update[NomEntité]UseCase(ctx.user, {
       // mapper input vers les paramètres requis
     });
-    revalidatePath(ROUTES.[ROUTE_ASSOCIÉE]);
+    revalidatePath(ROUTER.[ROUTE_ASSOCIÉE]);
     return result;
   });
 
@@ -257,7 +257,7 @@ export const delete[NomEntité]Action = authenticatedAction
     await delete[NomEntité]UseCase(ctx.user, {
       // mapper input vers les paramètres requis
     });
-    revalidatePath(ROUTES.[ROUTE_ASSOCIÉE]);
+    revalidatePath(ROUTER.[ROUTE_ASSOCIÉE]);
   });
 ```
 
@@ -530,7 +530,7 @@ export default async function Edit[NomEntité]Page({ params }: PageProps) {
 
 ### 5. Configuration (src/config/)
 
-#### A. Routes (src/config/routes.ts)
+#### A. Routes (src/config/router.config.ts)
 
 Mettez à jour le fichier de configuration des routes si nécessaire.
 
@@ -542,7 +542,7 @@ Routes à ajouter:
 ...
 ```
 
-#### B. Cache Tags (src/config/cache-tags.ts)
+#### B. Cache Tags (src/config/cache-tags.config.ts)
 
 Ajoutez les tags nécessaires pour la gestion du cache avec Next.js.
 
@@ -562,7 +562,7 @@ Tags à ajouter:
 - **Next.js**: Respectez les bonnes pratiques de Next.js 15 (Server Components vs Client Components)
 - **Tests**: Assurez-vous que les fonctions du repository sont facilement remplaçables pour les tests
 - **Server Actions**: Utilisez le pattern safe-action avec authenticatedAction si nécessaire
-- **Chemins**: Utilisez les chemins de route définis dans ROUTES pour les revalidatePath
+- **Chemins**: Utilisez les chemins de route définis dans ROUTER pour les revalidatePath
 - **Cache**: Mettez en place des tags de cache appropriés pour optimiser les performances
 
 ## Considérations Particulières

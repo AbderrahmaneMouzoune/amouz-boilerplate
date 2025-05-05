@@ -14,11 +14,11 @@ export const APP_CONFIG = {
   authors: [
     { name: 'Abderrahmane MOUZOUNE', url: 'https://abderrahmanemouzoune.com' },
   ],
-}
+} as const
 
 export const FALLBACK_SEO: Metadata = {
   metadataBase: new URL(APP_CONFIG.website),
-  authors: APP_CONFIG.authors,
+  authors: [...APP_CONFIG.authors],
   creator: APP_CONFIG.creator,
   title:
     env.NODE_ENV !== 'production'

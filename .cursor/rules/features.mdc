@@ -88,7 +88,7 @@ export class ${1:NomEntité}Repository {
 import { authenticatedAction } from "@lib/safe-action";
 import { revalidatePath } from "next/cache";
 import { z } from "zod";
-import { ROUTES } from "@config/routes";
+import { ROUTER } from "@config/router.config";
 import { ${1:NomEntité}Repository } from "@data-access/repositories/${2:nom-entité}.repository";
 import { Create${1:NomEntité}Input, Update${1:NomEntité}Input } from "@data-access/schemas/${2:nom-entité}.schema";
 import { User } from "@data-access/schemas/user.schema";
@@ -213,7 +213,7 @@ export const create${1:NomEntité}Action = authenticatedAction
     const result = await create${1:NomEntité}UseCase(ctx.user, {
       ${10:// mapper input vers les paramètres requis}
     });
-    revalidatePath(ROUTES.${11:ROUTE_ASSOCIÉE});
+    revalidatePath(ROUTER.${11:ROUTE_ASSOCIÉE});
     return result;
   });
 
@@ -229,7 +229,7 @@ export const update${1:NomEntité}Action = authenticatedAction
     const result = await update${1:NomEntité}UseCase(ctx.user, {
       ${13:// mapper input vers les paramètres requis}
     });
-    revalidatePath(ROUTES.${11:ROUTE_ASSOCIÉE});
+    revalidatePath(ROUTER.${11:ROUTE_ASSOCIÉE});
     return result;
   });
 
@@ -244,7 +244,7 @@ export const delete${1:NomEntité}Action = authenticatedAction
     await delete${1:NomEntité}UseCase(ctx.user, {
       ${3:nomEntité}Id: input.${3:nomEntité}Id,
     });
-    revalidatePath(ROUTES.${11:ROUTE_ASSOCIÉE});
+    revalidatePath(ROUTER.${11:ROUTE_ASSOCIÉE});
   });
 ```
 
@@ -449,7 +449,7 @@ export function ${1:NomEntité}Form({ initialData, onSuccess }: ${1:NomEntité}F
 import { useRouter } from "next/navigation";
 import { Button } from "@components/ui/button";
 import { ${1:NomEntité} } from "@data-access/schemas/${2:nom-entité}.schema";
-import { ROUTES } from "@config/routes";
+import { ROUTER } from "@config/router.config";
 import {
   Table,
   TableBody,
@@ -470,7 +470,7 @@ export function ${1:NomEntité}ListClient({ ${3:nomEntités} }: ${1:NomEntité}L
     <div>
       <div className="flex justify-between items-center mb-4">
         <h2 className="text-xl font-semibold">Liste des ${3:nomEntités}</h2>
-        <Button onClick={() => router.push(ROUTES.${4:ROUTE_CREATE})}>
+        <Button onClick={() => router.push(ROUTER.${4:ROUTE_CREATE})}>
           Créer un ${5:nomEntité}
         </Button>
       </div>
@@ -499,7 +499,7 @@ export function ${1:NomEntité}ListClient({ ${3:nomEntités} }: ${1:NomEntité}L
                   <Button
                     variant="outline"
                     size="sm"
-                    onClick={() => router.push(`${ROUTES.${8:ROUTE_BASE}}/${item.id}`)}
+                    onClick={() => router.push(`${ROUTER.${8:ROUTE_BASE}}/${item.id}`)}
                   >
                     Éditer
                   </Button>
@@ -605,9 +605,9 @@ export default async function Edit${1:NomEntité}Page({ params }: PageProps) {
 
 ```typescript
 // @cursor-rule: generate-routes-update
-// Ajouter ces routes à votre fichier src/config/routes.ts
+// Ajouter ces routes à votre fichier src/config/router.config.ts
 
-export const ROUTES = {
+export const ROUTER = {
   // Routes existantes...
   
   // Nouvelles routes pour ${1:NomEntité}
@@ -621,7 +621,7 @@ export const ROUTES = {
 
 ```typescript
 // @cursor-rule: generate-cache-tags-update
-// Ajouter ces tags à votre fichier src/config/cache-tags.ts
+// Ajouter ces tags à votre fichier src/config/cache-tags.config.ts
 
 export const CACHE_TAGS = {
   // Tags existants...

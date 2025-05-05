@@ -27,7 +27,9 @@
       "@styles/*": ["src/styles/*"],
       "@components/*": ["src/components/*"],
       "@lib/*": ["src/lib/*"],
-      "@use-cases/*": ["src/use-cases/*"]
+      "@use-cases/*": ["src/use-cases/*"],
+      "@data-access/*": ["src/data-access/*"],
+      "@config/*": ["src/config/*"]
     },
     "target": "ES2017"
   },

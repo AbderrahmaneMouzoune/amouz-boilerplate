@@ -1,16 +1,19 @@
 'use client'
 
-import { Toaster } from '@components/ui/sonner'
-import {
-  ThemeProvider as NextThemesProvider,
-  ThemeProviderProps,
-} from 'next-themes'
+import * as React from 'react'
+const NextThemesProvider = dynamic(
+  () => import('next-themes').then((e) => e.ThemeProvider),
+  {
+    ssr: false,
+  },
+)
+import dynamic from 'next/dynamic'
+import { ThemeProviderProps } from 'next-themes'
 
-export function ThemeProvider({ children, ...props }: ThemeProviderProps) {
+export function ThemeProvider({ children }: ThemeProviderProps) {
   return (
-    <NextThemesProvider {...props}>
+    <NextThemesProvider attribute="class" defaultTheme="system" enableSystem>
       {children}
-      <Toaster />
     </NextThemesProvider>
   )
 }

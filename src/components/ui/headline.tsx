@@ -1,50 +1,48 @@
-import { Slot } from '@radix-ui/react-slot'
-import type { VariantProps } from 'class-variance-authority'
-import { cva } from 'class-variance-authority'
 import * as React from 'react'
+import { Slot } from '@radix-ui/react-slot'
+import { cva, type VariantProps } from 'class-variance-authority'
 
 import { cn } from '@lib/utils'
 
-const headlineVariants = cva(
-  'text-primary-700 font-lexend scroll-m-20 text-xl font-bold',
-  {
-    variants: {
-      variant: {
-        h1: 'text-4xl font-bold',
-        h2: 'text-3xl font-semibold',
-        h3: 'text-2xl font-medium',
-        h4: 'text-xl font-medium',
-        h5: 'text-lg font-medium',
-        h6: 'text-base font-medium',
-        p: 'text-base font-medium',
-      },
-    },
-    defaultVariants: {
-      variant: 'h2',
+const headlineVariants = cva('font-lexend scroll-m-20 text-xl font-semibold', {
+  variants: {
+    variant: {
+      h1: 'text-4xl font-semibold sm:text-5xl md:text-6xl',
+      h2: 'text-3xl font-semibold',
+      h3: 'text-lg md:text-2xl font-medium',
+      h4: 'text-lg md:text-xl font-medium',
+      h5: 'text-lg font-medium',
+      h6: 'text-base font-medium',
+      p: 'text-base font-medium',
     },
   },
-)
+  defaultVariants: {
+    variant: 'h2',
+  },
+})
 
-export interface HeadlineProps
-  extends React.HTMLAttributes<HTMLHeadingElement>,
-    VariantProps<typeof headlineVariants> {
-  as?: React.ElementType
-  asChild?: boolean
+export type HeadlineProps = React.ComponentProps<'h2'> &
+  VariantProps<typeof headlineVariants> & {
+    as?: React.ElementType
+    asChild?: boolean
+  }
+
+function Headline({
+  className,
+  variant,
+  as = 'h2',
+  asChild = false,
+  ...props
+}: HeadlineProps) {
+  const Comp = (asChild ? Slot : as) ?? 'h2'
+
+  return (
+    <Comp
+      data-slot="headline"
+      className={cn(headlineVariants({ variant, className }))}
+      {...props}
+    />
+  )
 }
-
-const Headline = React.forwardRef<HTMLHeadingElement, HeadlineProps>(
-  ({ className, variant, as = 'h2', asChild = false, ...props }, ref) => {
-    const Comp = (asChild ? Slot : variant) ?? 'h2'
-
-    return (
-      <Comp
-        className={cn(headlineVariants({ variant, className }))}
-        ref={ref}
-        {...props}
-      />
-    )
-  },
-)
-Headline.displayName = 'Headline'
 
 export { Headline, headlineVariants }
